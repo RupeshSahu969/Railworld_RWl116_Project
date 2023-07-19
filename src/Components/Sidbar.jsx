@@ -32,6 +32,11 @@ const Sidbar = () => {
                                         <span className="ms-1 d-none d-sm-inline">DailyUpDate</span>
                                     </Link>
                                 </li>
+                                <li className="nav-item">
+                                    <Link to="title" className="nav-link align-middle px-0">
+                                        <span className="ms-1 d-none d-sm-inline">Title</span>
+                                    </Link>
+                                </li>
                             </ul>
                             <hr />
                            
