@@ -15,7 +15,7 @@ const MainRoutes = () => {
                 <Route path='/employee' element={<Employee />} />
                 <Route path='/expansion' element={<Expansion />} />
                 <Route path='/daily' element={<DailyUpdate />} />
-                <Route path='/title' element={<Title/>} />
+                <Route path='/title' element={<Title />} />
             </Routes>
 
         </>

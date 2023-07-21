@@ -7,63 +7,63 @@ import TitleCard from './TitleCard'
 
 const Title = () => {
 
-    const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(3);
-    var totalItems = 0;
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(3);
+  var totalItems = 0;
 
 
-    useEffect(() => {
-      const fetchPosts = async () => {
-        setLoading(true);
-        const res = await axios.get(`https://jsonplaceholder.typicode.com/users?_limit=10&_page=${currentPage}`);
-        setPosts(res.data);
-        setLoading(false);
-      };
-  
-      fetchPosts();
-    }, []);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      const res = await axios.get(`https://jsonplaceholder.typicode.com/users?_limit=10&_page=${currentPage}`);
+      setPosts(res.data);
+      setLoading(false);
+    };
 
-    function change() {
-      fetch(
-        `https://jsonplaceholder.typicode.com/posts?_limit=5&_page=${currentPage}`
-      )
-        .then((response) => response.json())
-        .then((result) => setPosts(result));
-    }
-  
-    function decrement() {
-      setCurrentPage(currentPage - 1);
-    }
-    function increment() {
-      setCurrentPage(currentPage + 1);
-    }
+    fetchPosts();
+  }, []);
 
-    // Get current posts
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-  
-    // Change page
-    const paginate = pageNumber => setCurrentPage(pageNumber);
-    return (
-        <div>
-            
-              <TitleCard  data={currentPosts} loading={loading}/>
-            <Flex style={{marginTop:"50px", justifyContent:"center"}}>
-            <Button disabled={currentPage === 1 ? true : false} onClick={decrement}>
-              PREVIOUS
-            </Button>
-            <Text style={{padding:"10px"}}>  {currentPage} </Text>
-     
-             <Button disabled={currentPage === 10 ? true : false} onClick={increment}>
-            NEXT
-           </Button>
-            </Flex>
-             
-        </div>
+  function change() {
+    fetch(
+      `https://jsonplaceholder.typicode.com/posts?_limit=5&_page=${currentPage}`
     )
+      .then((response) => response.json())
+      .then((result) => setPosts(result));
+  }
+
+  function decrement() {
+    setCurrentPage(currentPage - 1);
+  }
+  function increment() {
+    setCurrentPage(currentPage + 1);
+  }
+
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+  return (
+    <div>
+
+      <TitleCard data={currentPosts} loading={loading} />
+      <Flex style={{ marginTop: "50px", justifyContent: "center" }}>
+        <Button disabled={currentPage === 1 ? true : false} onClick={decrement}>
+          PREVIOUS
+        </Button>
+        <Text style={{ padding: "10px" }}>  {currentPage} </Text>
+
+        <Button disabled={currentPage === 10 ? true : false} onClick={increment}>
+          NEXT
+        </Button>
+      </Flex>
+
+    </div>
+  )
 }
 
 export default Title
