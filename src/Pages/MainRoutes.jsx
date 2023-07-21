@@ -4,6 +4,7 @@ import Project from './Project'
 import Employee from './Employee'
 import Expansion from './Expansion'
 import DailyUpdate from './DailyUpdate'
+import Title from "./Title"
 
 const MainRoutes = () => {
 
@@ -14,7 +15,7 @@ const MainRoutes = () => {
                 <Route path='/employee' element={<Employee />} />
                 <Route path='/expansion' element={<Expansion />} />
                 <Route path='/daily' element={<DailyUpdate />} />
-
+                <Route path='/title' element={<Title/>} />
             </Routes>
 
         </>

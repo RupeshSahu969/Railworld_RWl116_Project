@@ -6,9 +6,8 @@ import Title from './Pages/Title';
 function App() {
   return (
     <div>
-        {/* <Navbar/>
-     <Sidbar/> */}
-     <Title/>
+        <Navbar/>
+         <Sidbar/>
     </div>
   );
 }
