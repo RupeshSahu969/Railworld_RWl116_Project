@@ -5,7 +5,7 @@ import {
   FormErrorMessage,
   FormHelperText,
   Input,
-Button
+  Button
 } from '@chakra-ui/react'
 import axios from 'axios'
 
@@ -21,9 +21,9 @@ const Project = () => {
   const [date, setDate] = useState("")
 
 
-  const handleSubmit=(e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault()
-    
+
     const payload = {
       title,
       img,
@@ -36,7 +36,7 @@ const Project = () => {
 
     }
 
-    axios.post("https://mock-server1-jrc9.onrender.com/user",payload)
+    axios.post("https://mock-server1-jrc9.onrender.com/user", payload)
       .then((res) => {
 
         console.log(res);
@@ -47,14 +47,14 @@ const Project = () => {
         console.log(err);
       })
 
-      setTitle("");
-      setDescription("")
-      setPeople("");
-      setImg("")
-      setDate("");
-      setEmail("");
-      setTackstack("");
-      setDetails("");
+    setTitle("");
+    setDescription("")
+    setPeople("");
+    setImg("")
+    setDate("");
+    setEmail("");
+    setTackstack("");
+    setDetails("");
 
   }
   return (
@@ -126,7 +126,7 @@ const Project = () => {
             type="date"
           />
         </FormControl>
-        <br/>
+        <br />
         <Button colorScheme='blue' type='submit'> Submit </Button>
       </form>
 

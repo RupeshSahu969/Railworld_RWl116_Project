@@ -4,8 +4,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { Button, Card, CardHeader, CardBody, CardFooter, Text, Image, Stack, Heading, Spinner } from '@chakra-ui/react'
 import TitleCard from './TitleCard';
 
-
-
 const SinglePage = () => {
     const { id } = useParams();
     const [userData, setUserData] = useState(null);
@@ -78,8 +76,6 @@ const SinglePage = () => {
                     </Button>
                 </CardFooter>
             </Card>
-
-
         </>
     );
 };

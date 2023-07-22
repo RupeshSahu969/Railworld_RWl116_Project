@@ -49,7 +49,6 @@ const Title = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
   return (
     <div>
-
       <TitleCard data={currentPosts} loading={loading} />
       <Flex style={{ marginTop: "50px", justifyContent: "center" }}>
         <Button disabled={currentPage === 1 ? true : false} onClick={decrement} colorScheme='blue'>
@@ -61,7 +60,6 @@ const Title = () => {
           NEXT
         </Button>
       </Flex>
-
     </div>
   )
 }

@@ -18,27 +18,27 @@ import { useState } from "react";
 
 const Navbar = () => {
 
-    const [query,setQuery]= useState("");
+    const [query, setQuery] = useState("");
 
-    const [getData,setGetdata]=useState([]);
+    const [getData, setGetdata] = useState([]);
 
 
     const handleSearch = () => {
-        
-        fetch(`https://mock-server1-jrc9.onrender.com/user?title=${query}`)
-          .then((response) => response.json())
-          .then((data) => {
-            setGetdata(data)
-            console.log(data)
-          })
-          .catch((error) => console.error("Error fetching data:", error));
-      };
 
-console.log(getData)
+        fetch(`https://mock-server1-jrc9.onrender.com/user?title=${query}`)
+            .then((response) => response.json())
+            .then((data) => {
+                setGetdata(data)
+                console.log(data)
+            })
+            .catch((error) => console.error("Error fetching data:", error));
+    };
+
+    console.log(getData)
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                
+
                 <Link className="navbar-brand" fontSize="20px">
                     <Menu>
                         <MenuButton>
@@ -62,9 +62,9 @@ console.log(getData)
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <form className="form-inline my-2 my-lg-0  frm">
                         <input className="form-control mr-sm-2" type="text"
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        placeholder="Search" aria-label="Search" />
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            placeholder="Search" aria-label="Search" />
                         <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={handleSearch}>  <BsSearch /></button>
                     </form>
                 </div>
