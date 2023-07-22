@@ -17,7 +17,7 @@ const Title = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      const res = await axios.get(`https://jsonplaceholder.typicode.com/users?_limit=10&_page=${currentPage}`);
+      const res = await axios.get(`https://mock-server1-jrc9.onrender.com/user?_limit=10&_page=${currentPage}`);
       setPosts(res.data);
       setLoading(false);
     };
@@ -27,7 +27,7 @@ const Title = () => {
 
   function change() {
     fetch(
-      `https://jsonplaceholder.typicode.com/posts?_limit=5&_page=${currentPage}`
+      `https://mock-server1-jrc9.onrender.com/user?_limit=5&_page=${currentPage}`
     )
       .then((response) => response.json())
       .then((result) => setPosts(result));
@@ -52,12 +52,12 @@ const Title = () => {
 
       <TitleCard data={currentPosts} loading={loading} />
       <Flex style={{ marginTop: "50px", justifyContent: "center" }}>
-        <Button disabled={currentPage === 1 ? true : false} onClick={decrement}>
+        <Button disabled={currentPage === 1 ? true : false} onClick={decrement} colorScheme='blue'>
           PREVIOUS
         </Button>
         <Text style={{ padding: "10px" }}>  {currentPage} </Text>
 
-        <Button disabled={currentPage === 10 ? true : false} onClick={increment}>
+        <Button disabled={currentPage === 10 ? true : false} onClick={increment} colorScheme='blue'>
           NEXT
         </Button>
       </Flex>

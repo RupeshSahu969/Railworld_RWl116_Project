@@ -4,8 +4,16 @@ import { Grid, GridItem, Box, SimpleGrid, Divider, Text, Heading, Stack } from '
 import { Card, CardHeader, CardBody, CardFooter, Image, Button } from '@chakra-ui/react'
 
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const TitleCard = ({data}) => {
+
+const navigate=useNavigate();
+
+const handleButton=(id)=>{
+    navigate(`/single/${id}`);
+}
+
   return (
     <div>
           {data.length > 0 && data.map((item) => {
@@ -20,31 +28,27 @@ const TitleCard = ({data}) => {
                             <Image
                                 objectFit='cover'
                                 maxW={{ base: '100%', sm: '30%' }}
-                                src='https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'
+                                src={item.img}
+                                height="300px"
+                                width="200px"
                                 alt='Caffe Latte'
                             />
                             <Stack>
                                 <CardBody>
-                                    <Heading>The perfect latte</Heading>
+                                    <Heading>Title : {item.title}</Heading>
                                     <Text>
-                                        Name : {item.name}
-                                    </Text>
-                                    <Text>
-                                        Username : {item.emial}
+                                        id : {item.id}
                                     </Text>
                                     <Text>
                                         Email : {item.email}
                                     </Text>
                                     <Text>
-                                        Phone : {item.phone}
-                                    </Text>
-                                    <Text>
-                                        website : {item.website}
+                                        Date : {item.date}
                                     </Text>
                                 </CardBody>
 
                                 <CardFooter>
-                                    <Button variant='solid' colorScheme='blue'>
+                                    <Button variant='solid' colorScheme='blue' onClick={() => handleButton(item.id)} >
                                         + View More
                                     </Button>
                                 </CardFooter>
