@@ -6,19 +6,19 @@ import Expansion from './Expansion'
 import DailyUpdate from './DailyUpdate'
 import Title from "./Title"
 import SinglePage from './SinglePage'
-import Login from "./Login";
+import Home from './Home'
 
 const MainRoutes = () => {
 
     return (
         <>
             <Routes>
+                {/* <Route path='/' element={<Home />} /> */}
                 <Route path='/' element={<Project />} />
                 <Route path='/employee' element={<Employee />} />
                 <Route path='/expansion' element={<Expansion />} />
                 <Route path='/daily' element={<DailyUpdate />} />
                 <Route path='/title' element={<Title />} />
-                <Route path='/login' element={<Login />} />
                 <Route path='/single/:id' element={<SinglePage />} />
             </Routes>
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Styles from "../Styles/title.css"
-import { Grid, GridItem, Box, SimpleGrid, Divider, Text, Heading, Stack, Flex } from '@chakra-ui/react'
+import { Grid, GridItem, Box, SimpleGrid, Divider, Text, Heading, Stack, Flex, Spinner } from '@chakra-ui/react'
 import { Card, CardHeader, CardBody, CardFooter, Image, Button } from '@chakra-ui/react'
 import axios from 'axios'
 import TitleCard from './TitleCard'
@@ -45,8 +45,19 @@ const Title = () => {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-  // Change page
-  const paginate = pageNumber => setCurrentPage(pageNumber);
+  if (!posts) {
+    return <Spinner
+        thickness='4px'
+        speed='0.65s'
+        emptyColor='gray.200'
+        color='blue.500'
+        size='xl'
+        justifyContent="center"
+        alignItems="center"
+    />;
+}
+
+
   return (
     <div>
       <TitleCard data={currentPosts} loading={loading} />

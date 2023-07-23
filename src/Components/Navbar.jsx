@@ -45,10 +45,9 @@ const Navbar = () => {
                             <AiOutlineUser />
                         </MenuButton>
                         <MenuList>
-                            <Box m={'7px'} mt={'2px'} mb={'2px'} p={'5px'} fontSize={'14px'}> </Box>
+                            <Box m={'7px'} mt={'2px'} mb={'2px'} p={'5px'} fontSize={'14px'}>rupeshsahu969@gmail.com</Box>
                             <Box m={'7px'} mt={'2px'} mb={'2px'} p={'5px'} fontSize={'12px'} color={'#7a7676'}>  </Box>
                             <MenuItem borderTop={'1px solid #C6D2D9'} className='loginList'>Profile settings</MenuItem>
-                            <MenuItem className='loginList'>Download apps</MenuItem>
                             <MenuItem className='loginList' borderBottom={'1px solid #C6D2D9'} >Try chat app</MenuItem>
                             <MenuItem className='loginList'>Log out</MenuItem>
                         </MenuList>
@@ -68,6 +67,7 @@ const Navbar = () => {
                         <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={handleSearch}>  <BsSearch /></button>
                     </form>
                 </div>
+                
             </nav>
         </>
     )

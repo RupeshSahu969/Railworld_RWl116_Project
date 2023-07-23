@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Button, Card, CardHeader, CardBody, CardFooter, Text, Image, Stack, Heading, Spinner } from '@chakra-ui/react'
+import { Button, Card, CardHeader, CardBody, CardFooter, Text, Image, Stack, Heading, Spinner, Box } from '@chakra-ui/react'
 import TitleCard from './TitleCard';
 
 const SinglePage = () => {
@@ -25,20 +25,16 @@ const SinglePage = () => {
     }, [apiUrl]);
 
     if (!userData) {
-        return <Spinner
-            thickness='4px'
-            speed='0.65s'
-            emptyColor='gray.200'
-            color='blue.500'
-            size='xl'
-            justifyContent="center"
-        />;
-    }
+        return (
+          <Box justifyContent="center" alignItems="center" display="flex" height="200px">
+            <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="xl" />
+          </Box>
+        );
+      }
 
     const handleHome = () => {
         navigate("/")
     }
-
     return (
         <>
             <Card maxW='sm'>

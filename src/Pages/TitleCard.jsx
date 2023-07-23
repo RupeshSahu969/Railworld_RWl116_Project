@@ -1,18 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import Styles from "../Styles/nav.css"
-import { Grid, GridItem, Box, SimpleGrid, Divider, Text, Heading, Stack } from '@chakra-ui/react'
+import { Grid, GridItem, Box, SimpleGrid, Divider, Text, Heading, Stack, Spinner } from '@chakra-ui/react'
 import { Card, CardHeader, CardBody, CardFooter, Image, Button } from '@chakra-ui/react'
 
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const TitleCard = ({ data }) => {
+const TitleCard = ({ data,loading }) => {
 
     const navigate = useNavigate();
 
     const handleButton = (id) => {
         navigate(`/single/${id}`);
     }
+
+    if (loading) {
+        return (
+          <Box justifyContent="center" alignItems="center" display="flex" height="200px">
+            <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="xl" />
+          </Box>
+        );
+      }
+
 
     return (
         <div>

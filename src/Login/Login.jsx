@@ -12,28 +12,55 @@ import {
     Heading,
     Text,
     useColorModeValue,
+    useToast,
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Home from '../Pages/Home';
 
 const Login = () => {
-    const [email, setEmail] = useState("")
+    const [email, setEmail] = useState("eve.holt@reqres.in")
     const [password, setPassword] = useState("");
+    const toast = useToast();
+const [isAuth,setIsAuth]=useState(false)
 
     const navigate = useNavigate();
 
+    
     const handleLogin = () => {
-        axios.post('https://reqres.in/api/login', { email, password })
-            .then((res) => {
-                console.log(res)
-                alert("Login successfully")
-                navigate("/")
-                window.location.href = "/"
-            })
-            .catch((err) => {
-                alert("Login err")
-                console.log(err);
-            })
+        setIsAuth(true)
+
+        if(isAuth){
+            return <Home/>
+        }
+        else{
+            <Login/>
+        }
+
+        // axios.post('https://reqres.in/api/login', { email, password })
+        //     .then((res) => {
+        //         console.log(res)
+        //        setIsAuth(true);
+        //         toast({
+        //             position: "top-center",
+        //             status: "success",
+        //             description: "Logged In Successfully",
+        //             isClosable: true,
+        //         });
+                
+        //     })
+        //     .catch((err) => {
+        //         toast({
+        //             position: "top-center",
+        //             status: "error",
+        //             description: "Error Loggin In",
+        //             isClosable: true,
+        //         });
+        //         console.log(err);
+        //         setIsAuth(false)
+        //     })
+            
+            
     }
 
     return (

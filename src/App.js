@@ -1,8 +1,9 @@
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import Sidbar from "./Components/Sidbar";
-
-import Login from "./Pages/Login";
+import Home from "./Pages/Home";
+import Login from "./Login/Login";
+import MainRoutes from "./Pages/MainRoutes";
 import Title from "./Pages/Title";
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       <Navbar />
       <Sidbar />
       {/* <Login/> */}
-      {/* <Dashboard /> */}
+      {/* <MainRoutes/> */}
     </div>
   );
 }
