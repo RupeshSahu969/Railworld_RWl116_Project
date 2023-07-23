@@ -22,47 +22,33 @@ const Login = () => {
     const [email, setEmail] = useState("eve.holt@reqres.in")
     const [password, setPassword] = useState("");
     const toast = useToast();
-const [isAuth,setIsAuth]=useState(false)
-
     const navigate = useNavigate();
 
-    
-    const handleLogin = () => {
-        setIsAuth(true)
+    const handleLogin = (e) => {
+        e.preventDefault()
+        axios.post('https://reqres.in/api/login', { email, password })
+            .then((res) => {
+                console.log(res)
 
-        if(isAuth){
-            return <Home/>
-        }
-        else{
-            <Login/>
-        }
+                toast({
+                    position: "top-center",
+                    status: "success",
+                    description: "Logged In Successfully",
+                    isClosable: true,
+                });
 
-        // axios.post('https://reqres.in/api/login', { email, password })
-        //     .then((res) => {
-        //         console.log(res)
-        //        setIsAuth(true);
-        //         toast({
-        //             position: "top-center",
-        //             status: "success",
-        //             description: "Logged In Successfully",
-        //             isClosable: true,
-        //         });
-                
-        //     })
-        //     .catch((err) => {
-        //         toast({
-        //             position: "top-center",
-        //             status: "error",
-        //             description: "Error Loggin In",
-        //             isClosable: true,
-        //         });
-        //         console.log(err);
-        //         setIsAuth(false)
-        //     })
-            
-            
+            })
+            .catch((err) => {
+                toast({
+                    position: "top-center",
+                    status: "error",
+                    description: "Error Loggin In",
+                    isClosable: true,
+                });
+                console.log(err);
+
+            })
     }
-
     return (
         <Flex
             minH={'100vh'}

@@ -33,18 +33,19 @@ const TitleCard = ({ data,loading }) => {
                             overflow='hidden'
                             variant='outline'
                             spacing='40px'
+                            marginTop="10px"
                         >
                             <Image
                                 objectFit='cover'
                                 maxW={{ base: '100%', sm: '30%' }}
                                 src={item.img}
                                 height="300px"
-                                width="200px"
+                                width="300px"
                                 alt='Caffe Latte'
                             />
                             <Stack>
                                 <CardBody>
-                                    <Heading>Title : {item.title}</Heading>
+                                    <Heading size="sm">Title : {item.title}</Heading>
                                     <Text>
                                         id : {item.id}
                                     </Text>

@@ -13,7 +13,6 @@ const Title = () => {
   const [postsPerPage] = useState(3);
   var totalItems = 0;
 
-
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
@@ -56,8 +55,6 @@ const Title = () => {
         alignItems="center"
     />;
 }
-
-
   return (
     <div>
       <TitleCard data={currentPosts} loading={loading} />
@@ -74,9 +71,4 @@ const Title = () => {
     </div>
   )
 }
-
 export default Title
-
-
-
-// columns={[1, 2, null,3]};

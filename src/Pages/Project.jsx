@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+
 import {
   FormControl,
   FormLabel,
@@ -10,6 +11,7 @@ import {
   Box,
   useColorModeValue
 } from '@chakra-ui/react'
+
 import axios from 'axios'
 
 
@@ -74,11 +76,6 @@ const Project = () => {
     <div>
       
       <form onSubmit={handleSubmit}>
-        <Box
-          rounded={'lg'}
-          bg={useColorModeValue('white', 'gray.700')}
-          boxShadow={'lg'}
-          p={8}>
           <FormControl isRequired>
             <FormLabel>Title Name</FormLabel>
             <Input htmlSize={80} width='auto'
@@ -147,7 +144,7 @@ const Project = () => {
           </FormControl>
           <br />
           <Button colorScheme='blue' type='submit'> Submit </Button>
-        </Box>
+        
       </form>
 
     </div>
