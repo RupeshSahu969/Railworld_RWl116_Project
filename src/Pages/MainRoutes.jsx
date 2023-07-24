@@ -7,6 +7,7 @@ import DailyUpdate from './DailyUpdate'
 import Title from "./Title"
 import SinglePage from './SinglePage'
 import Home from './Home'
+import EditTitle from './EditTitle'
 
 const MainRoutes = () => {
 
@@ -19,6 +20,7 @@ const MainRoutes = () => {
                 <Route path='/expansion' element={<Expansion />} />
                 <Route path='/daily' element={<DailyUpdate />} />
                 <Route path='/title' element={<Title />} />
+                <Route path='/edit/:id' element={<EditTitle />} />
                 <Route path='/single/:id' element={<SinglePage />} />
             </Routes>
 

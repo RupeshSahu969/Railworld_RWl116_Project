@@ -3,11 +3,11 @@ import Navbar from '../Components/Navbar'
 import Sidbar from '../Components/Sidbar'
 
 const Home = () => {
-  
+
   return (
     <div>
-        <Navbar/>
-        <Sidbar/>
+      <Navbar />
+      <Sidbar />
     </div>
   )
 }

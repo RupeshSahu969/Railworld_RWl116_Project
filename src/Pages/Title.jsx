@@ -46,15 +46,15 @@ const Title = () => {
 
   if (!posts) {
     return <Spinner
-        thickness='4px'
-        speed='0.65s'
-        emptyColor='gray.200'
-        color='blue.500'
-        size='xl'
-        justifyContent="center"
-        alignItems="center"
+      thickness='4px'
+      speed='0.65s'
+      emptyColor='gray.200'
+      color='blue.500'
+      size='xl'
+      justifyContent="center"
+      alignItems="center"
     />;
-}
+  }
   return (
     <div>
       <TitleCard data={currentPosts} loading={loading} />
